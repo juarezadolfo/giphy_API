@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // An array of cars, new cars will be pushed into this array;
-    var cars = ["Dodge Charger", "Ford Mustang", "Chevy Camaro", "Pontiac Firebird","MOPAR"];
+    var cars = ["Dodge Charger", "Ford Mustang", "Chevy Camaro", "DeLorean","BMW"];
     // Creating Functions & Methods
     // Function that displays all gif buttons
     function displayGifButtons() {
@@ -42,7 +42,7 @@ $(document).ready(function () {
     // Function that displays all of the gifs
     function displayGifs() {
         var car = $(this).attr("data-cars");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=4LI0eZ9UVgWMWg15cbq7iZX97bBHr6og&q=" + car + "&limit=16&offset=0&rating=G&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=4LI0eZ9UVgWMWg15cbq7iZX97bBHr6og&q=" + car + "&limit=15&offset=0&rating=G&lang=en";
         
         console.log(queryURL); // displays the constructed url
         $.ajax({

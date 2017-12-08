@@ -1,6 +1,5 @@
 body{
     background-image: url("../images/background7.jpg");
-    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .jumbotron, .h1{
@@ -8,7 +7,6 @@ body{
     text-align: center;
     color:whitesmoke;
     text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
-}
 }
 label, legend{
     color: black;
@@ -25,6 +23,13 @@ label, legend{
 .gifDiv{
     float: left;
     margin: 5px;
+}
+img { 
+    height: 130px;
+    width: 130px;
+}
+p{
+    margin:5px;
 }
 
 /* STYLES FOR: */
