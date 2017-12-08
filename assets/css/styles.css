@@ -22,6 +22,10 @@ label, legend{
     background-color: #6b6666;
     border-color: whitesmoke;
 }
+.gifDiv{
+    float: left;
+    margin: 5px;
+}
 
 /* STYLES FOR: */
 /* <!-- header --> */
