@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background7.jpg");
     color:black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -8,7 +8,11 @@ body{
     text-align: center;
 }
 label, legend{
-    color: whitesmoke;
+    color: black;
+}
+#car-input{
+    background-color: rgba(0, 132, 255, 0.555);
+    color:whitesmoke;
 }
 
 /* STYLES FOR: */

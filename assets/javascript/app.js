@@ -5,7 +5,7 @@ $( document ).ready(function() {
     // Function that displays all gif buttons
     function displayGifButtons(){
         $("#gifButtonsDisplay").empty(); 
-        
+
         for (var i = 0; i < cars.length; i++){
             var gifButton = $("<button>");
             gifButton.addClass("car");
@@ -15,10 +15,22 @@ $( document ).ready(function() {
             $("#gifButtonsDisplay").append(gifButton);
         }
     }
-    
+    // Function to add a new car button
+function addNewButton(){
+    $("#addGif").on("click", function(){
+    var car = $("#car-input").val().trim();
+    if (car == ""){
+      return false; // no blank button allowed-user must enter a car
+    }
+    cars.push(car);
+
+    displayGifButtons();
+    return false;
+    });
+}
     // Calling Functions & Methods
     displayGifButtons(); // displays list of cars already created
-    
+    addNewButton();
     });
 // }
 // queryURL for Giphy API
