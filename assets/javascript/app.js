@@ -1,5 +1,26 @@
-//array of dogs and/or cars, new dogs and/or cars will be pushed into this array
-
+$( document ).ready(function() {
+    // An array of cars, new cars will be pushed into this array;
+    var cars = ["MOPAR", "Ford Mustang", "Chevy Bel Air", "Pontiac GTO", "Dodge Challenger"];
+    // Creating Functions & Methods
+    // Function that displays all gif buttons
+    function displayGifButtons(){
+        $("#gifButtonsDisplay").empty(); 
+        
+        for (var i = 0; i < cars.length; i++){
+            var gifButton = $("<button>");
+            gifButton.addClass("car");
+            gifButton.addClass("btn btn-primary")
+            gifButton.attr("data-name", cars[i]);
+            gifButton.text(cars[i]);
+            $("#gifButtonsDisplay").append(gifButton);
+        }
+    }
+    
+    // Calling Functions & Methods
+    displayGifButtons(); // displays list of cars already created
+    
+    });
+// }
 // queryURL for Giphy API
 
 // retrieve gifs & buttons matching the value inputed by....

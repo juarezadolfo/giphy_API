@@ -1,5 +1,14 @@
 body{
     background-image: url("../images/background.jpg");
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.jumbotron{
+    background-color: rgba(0, 132, 255, 0.555);
+    text-align: center;
+}
+label, legend{
+    color: whitesmoke;
 }
 
 /* STYLES FOR: */
