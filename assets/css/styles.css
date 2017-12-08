@@ -31,6 +31,10 @@ img {
 p{
     margin:5px;
 }
+div.gifDiv{
+    background-color: rgba(0, 132, 255, 0.555);
+    padding: 5px;
+}
 
 /* STYLES FOR: */
 /* <!-- header --> */

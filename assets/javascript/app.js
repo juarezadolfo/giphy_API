@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // An array of cars, new cars will be pushed into this array;
-    var cars = ["Dodge Charger", "Ford Mustang", "Chevy Camaro", "DeLorean","BMW"];
+    var cars = ["Dodge Charger", "Ford Mustang", "Chevy Camaro", "DeLorean", "BMW"];
     // Creating Functions & Methods
     // Function that displays all gif buttons
     function displayGifButtons() {
@@ -20,7 +20,7 @@ $(document).ready(function () {
         $("#addGif").on("click", function () {
             var car = $("#car-input").val().trim();
             if (car === "") {
-                return false; 
+                return false;
                 // no blank button allowed-user must enter a car
             }
             cars.push(car);
@@ -43,7 +43,7 @@ $(document).ready(function () {
     function displayGifs() {
         var car = $(this).attr("data-cars");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=4LI0eZ9UVgWMWg15cbq7iZX97bBHr6og&q=" + car + "&limit=15&offset=0&rating=G&lang=en";
-        
+
         console.log(queryURL); // displays the constructed url
         $.ajax({
             url: queryURL,
@@ -56,7 +56,7 @@ $(document).ready(function () {
                 if (results === "") {
                     alert("There isn't a gif for this selected button");
                 } for (var i = 0; i < results.length; i++) {
-                    var gifDiv = $("<div>"); 
+                    var gifDiv = $("<div>");
                     //div for the gifs to go into
                     gifDiv.addClass("gifDiv");
                     // pulling rating of gifs
@@ -65,11 +65,13 @@ $(document).ready(function () {
                     // pulling gifs?
                     // still image stored into src of image
                     var gifImage = $("<img>");
-                    gifImage.attr("src", results[i].images.fixed_height_small_still.url); 
-                    
+                    gifImage.attr("src", results[i].images.fixed_height_small_still.url);
+                    gifImage.attr("data-still", results[i].images.fixed_height_small_still.url); // still image
+                    gifImage.attr("data-animate", results[i].images.fixed_height_small.url); // animated image
+                    gifImage.attr("data-state", "still"); // image state toggle
 
-                // pulling still image of gif
-                // adding div of gifs to gifsView div
+                    // pulling still image of gif
+                    // adding div of gifs to gifsView div
                     gifImage.addClass("image");
                     gifDiv.append(gifImage);
                     $("#gifsView").prepend(gifDiv);
@@ -79,14 +81,23 @@ $(document).ready(function () {
     }
     // Calling Functions & Methods
     // displays list of cars already created
-    displayGifButtons(); 
+    displayGifButtons();
     // adds new button
     addNewButton();
     //removes buttons
     removeLastButton();
     // display gifs & ratings? ('Document Event Listeners')
     $(document).on("click", ".car", displayGifs);
-    
+    $(document).on("click", ".image", function () {
+        var state = $(this).attr('data-state');
+        if (state === 'still') {
+            $(this).attr('src', $(this).data('animate'));
+            $(this).attr('data-state', 'animate');
+        } else {
+            $(this).attr('src', $(this).data('still'));
+            $(this).attr('data-state', 'still');
+        }
+    });
 });
 // }
 // queryURL for Giphy API
