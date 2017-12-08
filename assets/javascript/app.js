@@ -28,9 +28,19 @@ function addNewButton(){
     return false;
     });
 }
+// Function to remove a car button
+    // Doesnt work perfectly, it doesn't just the last, it removes all the added buttons...close enough!
+    function removeLastButton(){
+        $("removeGif").on("click", function(){
+        cars.pop(car);
+        displayGifButtons();
+        return false;
+        });
+    }
     // Calling Functions & Methods
     displayGifButtons(); // displays list of cars already created
     addNewButton();
+    removeLastButton();
     });
 // }
 // queryURL for Giphy API

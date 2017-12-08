@@ -1,18 +1,26 @@
 body{
     background-image: url("../images/background7.jpg");
-    color:black;
+    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.jumbotron{
+.jumbotron, .h1{
     background-color: rgba(0, 132, 255, 0.555);
     text-align: center;
+    color:whitesmoke;
+    text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
 }
 label, legend{
     color: black;
 }
 #car-input{
     background-color: rgba(0, 132, 255, 0.555);
-    color:whitesmoke;
+    color:rgb(6, 23, 102);
+}
+.btn {
+    margin: 3px;
+    background-color: #6b6666;
+    border-color: whitesmoke;
 }
 
 /* STYLES FOR: */
